@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
-import {gql, graphql} from 'react-apollo';
+import {graphql} from 'react-apollo';
 import {FlatList, Text, View} from 'react-native';
 import ListItem from './ListItem';
+import gql from "graphql-tag";
 
 class List extends Component<{}> {
 
@@ -12,6 +13,7 @@ class List extends Component<{}> {
   );
 
   render() {
+    console.log('List render', this.props.data.people);
     const {data: {loading, people}} = this.props;
     if (loading) {
       return (

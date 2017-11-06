@@ -1,9 +1,11 @@
 import { ApolloClient } from "apollo-client";
-import {networkInterface} from "./graphql/networkInterface";
+import {link} from "./graphql/link";
 import {getPeopleQuery} from './List';
+import { InMemoryCache } from "apollo-cache-inmemory";
 
 export const client = new ApolloClient({
-  networkInterface,
+  cache: new InMemoryCache(),
+  link,
 });
 
 export function addUser(id, name) {
