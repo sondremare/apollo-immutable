@@ -1,0 +1,3 @@
+rootProject.name = 'apolloimmutable'
+
+include ':app'
