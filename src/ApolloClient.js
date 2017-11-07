@@ -22,4 +22,7 @@ export function addUser(id, name) {
     query: getPeopleQuery,
     data: newData,
   });
+
+  // needed to circumvent the bug in https://github.com/apollographql/apollo-client/issues/2415
+  client.queryManager.broadcastQueries()
 }
