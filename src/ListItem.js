@@ -1,9 +1,14 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {Text, View} from 'react-native';
+import {
+  pure,
+  compose,
+  setDisplayName,
+} from 'recompose'
 
-const ListItem: React.PureComponent =
+const ListItem =
     ({item}) => {
-    console.log(`Rendering List item with id: ${item.id} and name ${item.name}`);
+      console.log(`Rendering List item with id: ${item.id} and name ${item.name}`);
       return (
           <View>
             <Text>{item.name}</Text>
@@ -11,4 +16,4 @@ const ListItem: React.PureComponent =
       )
     };
 
-export default ListItem;
+export default compose(pure)(ListItem);
